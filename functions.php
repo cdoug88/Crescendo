@@ -1,11 +1,9 @@
 <?php
 add_action('admin_menu', 'nwcm_admin_init');
 function nwcm_admin_init()
-
 {
-   if (!current_user_can('editor'))
+    if (!current_user_can('editor'))
         return;
-}
 
     $menus_to_stay = array(
         'index.php',
@@ -20,7 +18,7 @@ function nwcm_admin_init()
         if (!in_array($value[2], $menus_to_stay))
             remove_menu_page($value[2]);
     }
-} 
+}
 
 
 function my_login_logo_url() {
