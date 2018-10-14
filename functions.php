@@ -4,9 +4,9 @@ add_action('admin_init', 'nwcm_admin_init');
 
 function nwcm_admin_init()
 {   
-// 	      if (!current_user_can('editor')) {
-//           return;
-//       }
+	      if (!current_user_can('editor')) {
+          return;
+      }
     // Remove unnecessary menus 
     $menus_to_stay = array(
         // Client manager
