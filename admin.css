@@ -1,6 +1,6 @@
 li#toplevel_page_crec-logo {
-bottom: 40px!important;
-	position: fixed!important;
+bottom: 0!important;
+position: fixed!important;
 }
 
 #wpcontent, #wpfooter {
