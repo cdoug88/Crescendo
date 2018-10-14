@@ -1,3 +1,8 @@
+li#toplevel_page_crec-logo {
+bottom: 40px!important;
+	position: fixed!important;
+}
+
 #wpcontent, #wpfooter {
     margin-left: 100px;
     background: #f8f8f8;
