@@ -1,0 +1,89 @@
+body {
+	background: #05192d;
+}
+#nav, #backtoblog {
+	display: none;
+}
+.login form {
+	box-shadow: none;
+}
+.forgetmenot {
+	display: none;
+}
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
+	width: 100%;
+	height: 40px;
+}
+.wp-core-ui .button-primary {
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+	background: #55bf9a;
+	transition: all.9s;
+}
+.wp-core-ui .button-primary:hover {
+	background: #0d8acd;
+	
+}
+.login-content {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+}
+.left-section {
+	background: url('/wp-content/themes/blankslate%202/images/background.jpg');
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+	width: 70%;
+	height: 100%;
+}
+.left-section:after {
+	background: #05192d;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: .9;
+}
+
+.right-section  {
+	width: 30%;
+	height: 100%;
+	background: white;
+}
+
+.login form {
+background: #05192d;	
+}
+.login form .input, .login input[type=text] {
+    font-size: 22px;
+    width: 100%;
+    color: #333;
+    padding: 7px;
+    margin: 2px 6px 16px 0;
+}
+.login label {
+    color: white;
+    font-size: 11px;
+}
+
+.login h1 a {
+    background-image: url(images/w-logo-blue.png?ver=20131202);
+    background-image: none,url(images/wordpress-logo.svg?ver=20131107);
+    background-size: 86px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    color: #444;
+    height: 93px;
+    font-size: 20px;
+    line-height: 1.3em;
+    margin: 0 auto 9px;
+    padding: 0;
+    width: 84px;
+    text-indent: -9999px;
+    outline: 0;
+    display: block;
+}
