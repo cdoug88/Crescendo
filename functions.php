@@ -18,7 +18,7 @@ function nwcm_admin_init()
         if (!in_array($value[2], $menus_to_stay))
             remove_menu_page($value[2]);
     }
-}
+} 
 
 
 function my_login_logo_url() {
