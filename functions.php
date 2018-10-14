@@ -125,7 +125,7 @@ return;
 }
  
 //remove menu from site backend.
-	toplevel_page_wppusher
+	
 remove_menu_page( 'edit-comments.php' ); //Comments
 remove_menu_page( 'edit.php' ); //Comments
 remove_menu_page( 'widgets.php' ); //Widgets
