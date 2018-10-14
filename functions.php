@@ -12,6 +12,7 @@ function nwcm_admin_init()
         'edit.php?post_type=page',
         'nav-menus.php',
         'post-new.php',
+	'crec-logo',
         'logout'
     );
     foreach ($GLOBALS['menu'] as $key => $value) {
