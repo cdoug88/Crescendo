@@ -125,6 +125,7 @@ return;
 }
  
 //remove menu from site backend.
+	toplevel_page_wppusher
 remove_menu_page( 'edit-comments.php' ); //Comments
 remove_menu_page( 'edit.php' ); //Comments
 remove_menu_page( 'widgets.php' ); //Widgets
@@ -136,6 +137,7 @@ remove_menu_page( 'options-general.php' ); //Settings
 remove_menu_page( 'profile.php' ); //Profile Page
 remove_menu_page('edit.php?post_type=testimonial'); // Custom post type 1
 remove_menu_page('edit.php?post_type=homeslider'); // Custom post type 2
+remove_menu_page('admin.php?page=wppusher'); // WpPusher
 }
 add_action( 'admin_menu', 'remove_menus' , 100 );
 remove_action('welcome_panel', 'wp_welcome_panel');
