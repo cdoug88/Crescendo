@@ -1,30 +1,23 @@
 <?php
- 
-add_action('admin_init', 'nwcm_admin_init');
-
+add_action('admin_menu', 'nwcm_admin_init');
 function nwcm_admin_init()
-{   
-	      if (!current_user_can('editor')) {
-          return;  
-      }
-    // Remove unnecessary menus 
+{
+//     if (!current_user_can('editor'))
+//         return;
+
     $menus_to_stay = array(
-        // Client manager
         'index.php',
-
-        // Dashboard
         'edit.php',
-
-        // Users
         'upload.php',
-	'edit.php?post_type=page',
-	'nav-menus.php',
-	'admin.php?page=logout'
-    );      
-    foreach ($GLOBALS['menu'] as $key => $value) {          
-        if (!in_array($value[2], $menus_to_stay)) remove_menu_page($value[2]);
-    }   
-
+        'edit.php?post_type=page',
+        'nav-menus.php',
+        'post-new.php',
+        'admin.php?page=logout'
+    );
+    foreach ($GLOBALS['menu'] as $key => $value) {
+        if (!in_array($value[2], $menus_to_stay))
+            remove_menu_page($value[2]);
+    }
 } 
 
 
