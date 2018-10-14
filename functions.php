@@ -137,16 +137,37 @@ function pmg_rm_meta_boxes()
 
 
 // example custom dashboard widget
-function custom_dashboard_widget() {
+function custom_support_widget() {
 	echo "<p>With Crecendo, you can expect a cleaner, easier, and more enjoyable user experience. Inspired by your comments and feedback, we are always working on taking Crecendo to the next level of usability. We do everything we can to periodically add new features and tools to give you more control over your website while maintaining the simplicity you have come to know and love. <br><br>Feel free to reach out to us at anytime for technical support. Check back here for information on the latest updates and releases.</p>
 	<ul>
 	<li><a href='#'>test</a></li>
 	</ul>";
 }
-function add_custom_dashboard_widget() {
-	wp_add_dashboard_widget('custom_dashboard_widget', 'Website Support', 'custom_dashboard_widget');
+function add_custom_support_widget() {
+	wp_add_dashboard_widget('custom_support_widget', 'Website Support', 'custom_support_widget');
 }
-add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
+add_action('wp_dashboard_setup', 'add_custom_support_widget');
+
+
+
+
+
+
+// example custom dashboard widget
+function custom_homepage_widget() {
+	echo "<p>With Crecendo, you can expect a cleaner, easier, and more enjoyable user experience. Inspired by your comments and feedback, we are always working on taking Crecendo to the next level of usability. We do everything we can to periodically add new features and tools to give you more control over your website while maintaining the simplicity you have come to know and love. <br><br>Feel free to reach out to us at anytime for technical support. Check back here for information on the latest updates and releases.</p>
+	<ul>
+	<li><a href='#'>test</a></li>
+	</ul>";
+}
+function add_custom_homepage_widget() {
+	wp_add_dashboard_widget('custom_homepage_widget', 'Website Support', 'custom_homepage_widget');
+}
+add_action('wp_dashboard_setup', 'add_custom_homepage_widget');
+
+
+
+
 
 
 
