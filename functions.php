@@ -1,8 +1,11 @@
 <?php
 add_action('admin_menu', 'nwcm_admin_init');
 function nwcm_admin_init()
-{
 
+{
+   if (!current_user_can('editor'))
+        return;
+}
 
     $menus_to_stay = array(
         'index.php',
