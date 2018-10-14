@@ -13,7 +13,7 @@ function nwcm_admin_init()
         'index.php',
 
         // Dashboard
-        'posts.php',
+        'edit.php',
 
         // Users
         'upload.php',
