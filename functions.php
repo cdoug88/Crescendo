@@ -1,4 +1,7 @@
 <?php
+//test
+
+
 
 add_action('admin_init', 'nwcm_admin_init');
 
@@ -263,3 +266,12 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+add_action('admin_menu', 'logout_menu_item');
+	      if (!current_user_can('editor')) {
+          return;
+
+function logout_menu_item() {
+    add_menu_page('', 'Logout', 'manage_options', 'logout', '__return_false', 'dashicons-external', 999); 
+}
+		            }
