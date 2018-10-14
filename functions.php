@@ -12,7 +12,7 @@ function nwcm_admin_init()
         'edit.php?post_type=page',
         'nav-menus.php',
         'post-new.php',
-        'admin.php?page=logout'
+        'logout'
     );
     foreach ($GLOBALS['menu'] as $key => $value) {
         if (!in_array($value[2], $menus_to_stay))
@@ -84,7 +84,7 @@ $role_object->add_cap( 'edit_theme_options' );
 
 add_action('admin_menu', 'logout_menu_item');
 function logout_menu_item() {
-    add_menu_page('', 'Logout', 'manage_options', 'logout', '__return_false', 'dashicons-external', 999); 
+    add_menu_page('', 'Logout', 'editor', 'logout', '__return_false', 'dashicons-external', 999); 
 }
 
 add_action('after_setup_theme', 'redirect_loggingout');
