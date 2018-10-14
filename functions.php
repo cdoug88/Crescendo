@@ -13,12 +13,11 @@ function nwcm_admin_init()
         'index.php',
 
         // Dashboard
-        'post-new.php',
+        'edit.php',
 
         // Users
         'upload.php',
 	'edit.php?post_type=page',
-	'edit.php?post_type=post',
 	'nav-menus.php',
 	'admin.php?page=logout'
     );      
