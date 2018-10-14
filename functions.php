@@ -1,7 +1,7 @@
 <?php
 add_action( 'admin_menu', 'linked_url' );
     function linked_url() {
-    add_menu_page( 'linked_url', 'External link', 'read', 'crec-logo', '', 'dashicons-text', 9999 );
+    add_menu_page( 'linked_url', 'Logo Here', 'read', 'crec-logo', '', 'crec-logo', 9999 );
     }
 
     add_action( 'admin_menu' , 'linkedurl_function' );
