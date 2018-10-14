@@ -7,7 +7,7 @@ add_action( 'admin_menu', 'linked_url' );
     add_action( 'admin_menu' , 'linkedurl_function' );
     function linkedurl_function() {
     global $menu;
-    $menu[9999][2] = "http://citylinecreative.com";
+    $menu[9999] = "http://citylinecreative.com";
     }
 
 
@@ -27,10 +27,10 @@ function nwcm_admin_init()
 	    'crec-logo',
         'admin.php?page=logout'
     );
-    foreach ($GLOBALS['menu'] as $key => $value) {
-        if (!in_array($value[2], $menus_to_stay))
-            remove_menu_page($value[2]);
-    }
+//     foreach ($GLOBALS['menu'] as $key => $value) {
+//         if (!in_array($value[2], $menus_to_stay))
+//             remove_menu_page($value[2]);
+//     }
 } 
 
 
