@@ -17,9 +17,10 @@ function nwcm_admin_init()
 
         // Users
         'upload.php',
-		'edit.php?post_type=page',
-		'nav-menus.php',
-		'admin.php?page=logout'
+	'edit.php?post_type=page',
+	'edit.php?post_type=post',
+	'nav-menus.php',
+	'admin.php?page=logout'
     );      
     foreach ($GLOBALS['menu'] as $key => $value) {          
         if (!in_array($value[2], $menus_to_stay)) remove_menu_page($value[2]);
