@@ -1,24 +1,26 @@
 <?php
-add_action('admin_menu', 'nwcm_admin_init');
-function nwcm_admin_init()
-{
-    if (!current_user_can('editor'))
-        return;
+add_action('admin_init', 'nwcm_admin_init');
 
-    $menus_to_stay = array(
-        'index.php',
-        'edit.php',
-        'upload.php',
-        'edit.php?post_type=page',
-        'nav-menus.php',
-        'post-new.php',
-        'admin.php?page=logout'
-    );
-    foreach ($GLOBALS['menu'] as $key => $value) {
-        if (!in_array($value[2], $menus_to_stay))
-            remove_menu_page($value[2]);
-    }
-} 
+ function nwcm_admin_init()
+ {   
+      if (!current_user_can('editor')) {
+      return;
+  }
+  $menus_to_stay = array(
+    'index.php',
+     'edit.php',
+    'upload.php',
+    'edit.php?post_type=page',
+   'nav-menus.php',
+    'post-new.php',
+    'admin.php?page=logout'
+       );      
+     foreach ($GLOBALS['menu'] as $key => $value) {          
+    if (!in_array($value[2], $menus_to_stay)) 
+    remove_menu_page($value[2]);
+    }   
+
+     } 
 
 
 function my_login_logo_url() {
