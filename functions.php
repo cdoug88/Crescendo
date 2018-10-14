@@ -276,7 +276,7 @@ return $count;
 
 
 
-/*
+
 add_action( 'admin_menu', 'linked_url' );
     function linked_url() {
     add_menu_page( 'linked_url', 'Logo Here', 'read', 'crec-logo', '', 'crec-logo', 9999 );
@@ -287,4 +287,4 @@ add_action( 'admin_menu', 'linked_url' );
     global $menu;
     $menu[9999][2] = "https://citylinecreative.com";
     }
-*/
+
