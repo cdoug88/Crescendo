@@ -1,16 +1,4 @@
 <?php
-add_action( 'admin_menu', 'linked_url' );
-    function linked_url() {
-    add_menu_page( 'linked_url', 'Logo Here', 'read', 'crec-logo', '', 'crec-logo', 9999 );
-    }
-
-    add_action( 'admin_menu' , 'linkedurl_function' );
-    function linkedurl_function() {
-    global $menu;
-    $menu[9999][2] = "http://citylinecreative.com";
-    }
-
-
 add_action('admin_menu', 'nwcm_admin_init');
 function nwcm_admin_init()
 {
@@ -24,16 +12,13 @@ function nwcm_admin_init()
         'edit.php?post_type=page',
         'nav-menus.php',
         'post-new.php',
-	    'crec-logo',
         'admin.php?page=logout'
     );
     foreach ($GLOBALS['menu'] as $key => $value) {
         if (!in_array($value[2], $menus_to_stay))
-            add_menu_page($value[2]);
+            remove_menu_page($value[2]);
     }
 } 
-
-
 function my_login_logo_url() {
     return home_url();
 }
@@ -190,7 +175,6 @@ return;
 //remove menu from site backend.
 	
 remove_menu_page( 'edit-comments.php' ); //Comments
-remove_menu_page( 'edit.php' ); //Comments
 remove_menu_page( 'widgets.php' ); //Widgets
 remove_menu_page( 'themes.php' ); //Appearance
 remove_menu_page( 'plugins.php' ); //Plugins
@@ -291,3 +275,16 @@ return $count;
 }
 
 
+
+/*
+add_action( 'admin_menu', 'linked_url' );
+    function linked_url() {
+    add_menu_page( 'linked_url', 'Logo Here', 'read', 'crec-logo', '', 'crec-logo', 9999 );
+    }
+
+    add_action( 'admin_menu' , 'linkedurl_function' );
+    function linkedurl_function() {
+    global $menu;
+    $menu[9999][2] = "https://citylinecreative.com";
+    }
+*/
