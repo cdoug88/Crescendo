@@ -61,7 +61,7 @@ li#wp-admin-bar-wp-logo {
 
 #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
     width: 100px;
-    background-color: red;
+    background-color: #05192d;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
