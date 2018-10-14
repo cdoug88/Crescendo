@@ -1,6 +1,7 @@
 li#toplevel_page_crec-logo {
 bottom: 40px!important;
 position: fixed!important;
+background-image: url('/images/crec.svg');
 }
 
 #wpcontent, #wpfooter {
