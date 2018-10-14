@@ -1,5 +1,33 @@
 <?php
 
+add_action('admin_init', 'nwcm_admin_init');
+
+function nwcm_admin_init()
+{   
+// 	      if (!current_user_can('editor')) {
+//           return;
+//       }
+    // Remove unnecessary menus 
+    $menus_to_stay = array(
+        // Client manager
+        'index.php',
+
+        // Dashboard
+        'edit.php',
+
+        // Users
+        'upload.php',
+		'edit.php?post_type=page',
+		'nav-menus.php',
+		'admin.php?page=logout'
+    );      
+    foreach ($GLOBALS['menu'] as $key => $value) {          
+        if (!in_array($value[2], $menus_to_stay)) remove_menu_page($value[2]);
+    }   
+
+} 
+
+
 function my_login_logo_url() {
     return home_url();
 }
@@ -63,11 +91,20 @@ function logout_without_confirm($action, $result)
 $role_object = get_role( 'editor' );
 $role_object->add_cap( 'edit_theme_options' );
 
-add_action( 'admin_menu', 'my_admin_menu' );
-
-function my_admin_menu() {
-	add_menu_page( 'Logout', 'Logout', 'edit_posts', get_site_url() .  '/wp-login.php?action=logout', '', 'dashicons-download', 100  );
+add_action('admin_menu', 'logout_menu_item');
+function logout_menu_item() {
+    add_menu_page('', 'Logout', 'manage_options', 'logout', '__return_false', 'dashicons-external', 999); 
 }
+
+add_action('after_setup_theme', 'redirect_loggingout');
+    function redirect_loggingout() {
+    if ( isset($_GET['page']) && $_GET['page'] == 'logout' ) {
+      wp_redirect( wp_logout_url() );
+      exit();
+    }
+}
+
+
 add_action( 'admin_menu', 'my_navigation_menu' );
 function my_navigation_menu() {
 	add_menu_page( 'Main Navigation', 'Edit Navigation', 'edit_posts', '/nav-menus.php', '', 'dashicons-admin-links', 40  );
