@@ -18,7 +18,7 @@ span.vers.comment-grey-bubble {
 }
 #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
     width: 160px;
-    background-color: red;
+    background-color: #212121;
 	
 }
 li#wp-admin-bar-wp-logo {
