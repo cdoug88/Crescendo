@@ -297,4 +297,4 @@ add_action( 'admin_menu', 'linked_url' );
     global $menu;
     $menu[0][2] = "https://citylinecreative.com";
     }
-
+add_filter('show_admin_bar', '__return_false');
