@@ -299,4 +299,20 @@ add_action( 'admin_menu', 'linked_url' );
     }
 
 
-remove_action('init', 'wp_admin_bar_init');
+if ( !current_user_can( 'manage_options' ) && is_admin() )
+{
+    function wpse271937_hide_adminbar()
+    {
+        ?>
+        <style>
+            #wpadminbar {
+                display: none;
+            }
+            #wpwrap {
+                top: -30px;/** change to own preference */
+            } 
+        </style>
+        <?php
+    }
+    add_action('admin_head', 'wpse271937_hide_adminbar'); 
+}
