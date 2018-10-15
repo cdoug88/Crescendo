@@ -1,7 +1,8 @@
 li#toplevel_page_crec-logo {
 bottom: 40px!important;
 position: fixed!important;
-background-image: url('/images/crec.svg')!important;
+background-image: url('https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg')!important;
+background-repeat: no-repeat;
 }
 
 #wpcontent, #wpfooter {
