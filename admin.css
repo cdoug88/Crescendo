@@ -5,7 +5,9 @@ background-image: url('https://citylinecreative.com/wp-content/themes/Crescendo/
 background-repeat: no-repeat;
 left: 24px;
 }
-
+li#toplevel_page_crec-logo:hover {
+background: transparent!important;	
+}
 #wpcontent, #wpfooter {
     margin-left: 100px;
     background: #f8f8f8;
