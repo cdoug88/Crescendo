@@ -299,20 +299,4 @@ add_action( 'admin_menu', 'linked_url' );
     }
 
 
-if (!function_exists('disableAdminBar')) {
-
-    function disableAdminBar(){
-
-    remove_action( 'admin_footer', 'wp_admin_bar_render', 1000 );
-
-    function remove_admin_bar_style_backend() {
-      echo '<style>body.admin-bar #wpcontent, body.admin-bar #adminmenu { padding-top: 0px !important; }</style>';
-    }
-
-    add_filter('admin_head','remove_admin_bar_style_backend');
-
-  }
-
-}
-
-add_filter('admin_head','remove_admin_bar_style_backend');
+remove_action('init', 'wp_admin_bar_init');
