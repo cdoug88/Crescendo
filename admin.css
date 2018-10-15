@@ -3,6 +3,7 @@ li#toplevel_page_crec-logo {
     background-repeat: no-repeat!important;
     left: 28px!important;
     top: -7px!important;
+    background: #031221!important;
 }
 li#toplevel_page_crec-logo:hover, li#toplevel_page_crec-logo:active {
 background: transparent!important;
