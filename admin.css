@@ -6,7 +6,8 @@ background-repeat: no-repeat;
 left: 24px;
 }
 li#toplevel_page_crec-logo:hover {
-background: transparent!important;	
+background: transparent!important;
+background-image: url('https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg')!important;
 }
 #wpcontent, #wpfooter {
     margin-left: 100px;
