@@ -297,6 +297,36 @@ add_action( 'admin_menu', 'linked_url' );
     global $menu;
     $menu[0][2] = "https://citylinecreative.com";
     }
-if ( ! current_user_can( 'manage_options' ) ) {
-    show_admin_bar( false );
+
+
+
+
+
+
+add_filter('ure_role_additional_options', 'add_remove_adminbar_from_backend_admin_option', 10, 1);
+function add_remove_adminbar_from_backend_admin_option($items) {
+    $item = URE_Role_Additional_Options::create_item('prohibit_admin_access', esc_html__('Remove admin bar from backend', 'user-role-editor'), 'admin_init', 'remove_adminbar_from_backend');
+    $items[$item->id] = $item;
+    
+    return $items;
+}
+function remove_adminbar_from_backend() {
+  wp_deregister_script('admin-bar');
+  wp_deregister_style('admin-bar');
+  
+  remove_action('admin_init', '_wp_admin_bar_init');
+  remove_action('in_admin_header', 'wp_admin_bar_render', 0);
+  add_action('admin_head', 'fix_adminbar_padding');
+}
+function fix_adminbar_padding() {
+?>
+   <style>
+      body.admin-bar, body.admin-bar #wpcontent, body.admin-bar #adminmenu {
+          padding-top: 0px !important;
+      }
+      html.wp-toolbar {
+          padding-top: 0px !important;
+      }
+   </style>
+<?php                    
 }
