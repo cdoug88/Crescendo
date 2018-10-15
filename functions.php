@@ -41,6 +41,15 @@ function custom_login_logo() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'custom_login_logo' );
 
+function custom_admin_logo() { ?>
+    <style type="text/css">
+       li#toplevel_page_crec-logo {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/crec.svg);
+        }
+    </style>
+<?php }
+add_action( 'admin_enqueue_scripts', 'custom_login_logo' );
+
 function remove_widgets_submenu() {
       global $submenu;
  
