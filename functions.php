@@ -158,10 +158,14 @@ add_action('wp_dashboard_setup', 'add_custom_support_widget');
 function custom_homepage_widget() {
 	echo "<h3>View Your Home Page</h3>
 	<a href='#' class='button'>View Now</a>
+	<h3>Add/Edit A Subpage</h3>
+	<a href='#' class='button'>View Now</a>
+	<h3>Write A Blog Post</h3>
+	<a href='#' class='button'>View Now</a>
 	";
 }
 function add_custom_homepage_widget() {
-	wp_add_dashboard_widget('custom_homepage_widget', 'Your Home Page', 'custom_homepage_widget');
+	wp_add_dashboard_widget('custom_homepage_widget', 'Dashboard Shortcuts', 'custom_homepage_widget');
 }
 add_action('wp_dashboard_setup', 'add_custom_homepage_widget');
 
