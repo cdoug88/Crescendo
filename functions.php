@@ -1,4 +1,5 @@
 <?php
+/*
 // 1. customize ACF path 
 add_filter(‘acf/settings/path’, ‘my_acf_settings_path’); 
 function my_acf_settings_path( $path ) { 
@@ -42,6 +43,7 @@ function my_wpp_settings_dir( $dir ) {
 
 // 3. Include wpp 
 include_once( get_stylesheet_directory() . ‘/inc/plugins/wpp/wppusher.php’ );
+*/
 
 
 add_action('admin_menu', 'nwcm_admin_init');
