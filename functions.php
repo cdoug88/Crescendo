@@ -1,4 +1,49 @@
 <?php
+// // 1. customize ACF path 
+// add_filter(‘acf/settings/path’, ‘my_acf_settings_path’); 
+// function my_acf_settings_path( $path ) { 
+// 	// update path
+// 	$path = get_stylesheet_directory() . ‘/inc/plugins/acf/’; 
+// 	// return
+// 	return $path; 
+// }
+
+// // 2. customize ACF dir 
+// add_filter(‘acf/settings/dir’, ‘my_acf_settings_dir’); 
+// function my_acf_settings_dir( $dir ) { 
+// 	// update path
+// 	$dir = get_stylesheet_directory_uri() . ‘/inc/plugins/acf/’; 
+// 	// return
+// 	return $dir; 
+// }
+
+// // 3. Include ACF 
+// include_once( get_stylesheet_directory() . ‘/inc/plugins/acf/acf.php’ );
+
+
+
+// // 1. customize wpp path 
+// add_filter(‘wpp/settings/path’, ‘my_wpp_settings_path’); 
+// function my_wpp_settings_path( $path ) { 
+// 	// update path
+// 	$path = get_stylesheet_directory() . ‘/inc/plugins/wpp/’; 
+// 	// return
+// 	return $path; 
+// }
+
+// // 2. customize wpp dir 
+// add_filter(‘wpp/settings/dir’, ‘my_wpp_settings_dir’); 
+// function my_wpp_settings_dir( $dir ) { 
+// 	// update path
+// 	$dir = get_stylesheet_directory_uri() . ‘/inc/plugins/wpp/’; 
+// 	// return
+// 	return $dir; 
+// }
+
+// // 3. Include wpp 
+// include_once( get_stylesheet_directory() . ‘/inc/plugins/wpp/wppusher.php’ );
+
+
 add_action('admin_menu', 'nwcm_admin_init');
 function nwcm_admin_init()
 {
