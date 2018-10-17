@@ -164,7 +164,7 @@ li#wp-admin-bar-comments {
     display: none;
 }
 .wp-core-ui .button-primary {
-    background: black;
+    background: #55bf9a;
     border: none;
     box-shadow: none;
     color: #fff;
@@ -189,7 +189,7 @@ li#wp-admin-bar-comments {
     box-sizing: border-box;
 }
 .wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
-    background: #595a5a;
+    background: #0d8acd;
     color: #fff;
 	border: none;
 }
