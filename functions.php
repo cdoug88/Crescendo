@@ -186,7 +186,7 @@ function pmg_rm_meta_boxes()
 
 // example custom dashboard widget
 function custom_support_widget() {
-	echo "<p>With Crecendo, you can expect a cleaner, easier, and more enjoyable user experience. Inspired by your comments and feedback, we are always working on taking Crecendo to the next level of usability. We do everything we can to periodically add new features and tools to give you more control over your website while maintaining the simplicity you have come to know and love. <br><br>Feel free to reach out to us at anytime for technical support. Check back here for information on the latest updates and releases.</p>
+	echo "<p>With Crecendo, you can expect a cleaner, easier, and more enjoyable user experience. We do everything we can to periodically add new features and tools to give you more control over your website while maintaining the simplicity you have come to know and love. <br><br>If you are have found a problem with your website, need help updating your website, or just have questions regarding your website, fill out the form below so someone from our team will get in touch with you ASAP.</p>
 	<ul>
 	<li><a href='#'>test</a></li>
 	</ul>";
