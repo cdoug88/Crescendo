@@ -1,3 +1,22 @@
+thead tr {
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+thead tr {
+    background: #05192d;
+    color: white;
+}
+th.manage-column {
+    color: white!important;
+}
+a {
+    color: #55bf9a;
+    transition: all .7s;
+}
+a:hover, a:active, a:visited {
+	color: #0d8acd;
+}
 .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active {
     margin-left: 4px;
     padding: 9px 29px;
