@@ -205,8 +205,8 @@ add_action('wp_dashboard_setup', 'add_custom_support_widget');
 function custom_homepage_widget() {
 	echo "
 	<div class='dash-btns'>
-	<span class='dashicons dashicons-admin-home'></span>
 	<div class='btn-one'>
+	<span class='dashicons dashicons-admin-home'></span>
 	<h3>View Your Home Page</h3>
 	<p>A Brief Description</p>
 	<a href='#' class='button-primary'>View Now</a>

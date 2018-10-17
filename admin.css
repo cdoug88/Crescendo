@@ -13,6 +13,9 @@
 	justify-content: center;
 	align-items: center;
 }
+#dashboard-widgets .inside h3, #dashboard-widgets .inside h4 {
+	font-weight: 600;
+}
 .postbox {
 	border: none!important;	
 }
