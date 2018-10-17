@@ -1,3 +1,6 @@
+.btn-one, .btn-two, .btn-three {
+margin: 15px;
+}
 .dash-btns {
 display:flex;
 justify-content: center;
