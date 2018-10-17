@@ -184,6 +184,7 @@ function pmg_rm_meta_boxes()
 
 
 
+/*
 // example custom dashboard widget
 function custom_support_widget() {
 	echo "<p>With Crecendo, you can expect a cleaner, easier, and more enjoyable user experience. We do everything we can to periodically add new features and tools to give you more control over your website while maintaining the simplicity you have come to know and love. <br><br>If you are have found a problem with your website, need help updating your website, or just have questions regarding your website, <strong>fill out the form below so someone from our team will get in touch with you ASAP.</strong></p>";
@@ -192,6 +193,7 @@ function add_custom_support_widget() {
 	wp_add_dashboard_widget('custom_support_widget', 'Website Support', 'custom_support_widget');
 }
 add_action('wp_dashboard_setup', 'add_custom_support_widget');
+*/
 
 
 
