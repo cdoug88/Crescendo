@@ -1,3 +1,26 @@
+.wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active {
+    margin-left: 4px;
+    padding: 9px 29px;
+    position: relative;
+    top: -3px;
+    text-decoration: none;
+    border: none;
+    /* border: 1px solid #ccc; */
+    border-radius: 2px;
+    background: #55bf9a;
+    text-shadow: none;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: normal;
+    color: white;
+    cursor: pointer;
+    outline: 0;
+    transition: all .6s;
+}
+
+, .wrap .page-title-action:hover {
+	background: #0d8acd;
+}
 div#postbox-container-1 {
     width: 100%!important;
 }
