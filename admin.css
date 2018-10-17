@@ -6,6 +6,7 @@ input {
     padding-top: 10px;
     justify-content: center;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 #wp-content-media-buttons a.button.wpforms-insert-form-button {
@@ -61,6 +62,10 @@ a:hover, a:active, a:visited {
 }
 #wpbody-content #dashboard-widgets #postbox-container-1 {
     width: 100%!important;
+}
+#wpbody-content #dashboard-widgets #postbox-container-2 {
+	width: 70%;
+	float: none;
 }
 #dashboard-widgets .inside h3, #dashboard-widgets .inside h4 {
 	font-weight: 600;
