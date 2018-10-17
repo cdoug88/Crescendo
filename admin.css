@@ -1,3 +1,6 @@
+#wp-content-media-buttons a.button.wpforms-insert-form-button {
+    display: none;
+}
 #wpforms-modal-notice {
 	display: none;
 }
