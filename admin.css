@@ -43,7 +43,7 @@ a:hover, a:active, a:visited {
 , .wrap .page-title-action:hover {
 	background: #0d8acd;
 }
-div#postbox-container-1 {
+#wpbody-content #dashboard-widgets .postbox-container {
     width: 100%!important;
 }
 #dashboard-widgets .inside h3, #dashboard-widgets .inside h4 {
