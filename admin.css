@@ -1,13 +1,20 @@
+#dashboard-widgets .inside h3, #dashboard-widgets .inside h4 {
+	font-weight: 600;
+}
 .btn-one, .btn-two, .btn-three {
-margin: 15px;
+	margin: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 .dash-btns {
-display:flex;
-justify-content: center;
-align-items: center;
+	display:flex;
+	justify-content: center;
+	align-items: center;
 }
 .postbox {
-border: none!important;	
+	border: none!important;	
 }
 li#toplevel_page_crec-logo {
     background-image: url(https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg)!important;
@@ -16,9 +23,9 @@ li#toplevel_page_crec-logo {
     top: -7px!important;
 }
 li#toplevel_page_crec-logo:hover, li#toplevel_page_crec-logo:active {
-background: transparent!important;
-background-image: url('https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg')!important;
-background-repeat: no-repeat!important;
+	background: transparent!important;
+	background-image: url('https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg')!important;
+	background-repeat: no-repeat!important;
 }
 #wpcontent, #wpfooter {
     margin-left: 100px;
