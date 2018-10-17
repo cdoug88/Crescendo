@@ -203,12 +203,24 @@ add_action('wp_dashboard_setup', 'add_custom_support_widget');
 
 // example custom dashboard widget
 function custom_homepage_widget() {
-	echo "<h3>View Your Home Page</h3>
-	<a href='#' class='button'>View Now</a>
+	echo "
+	<div class='dash-btns'>
+	<div class='btn-one'>
+	<h3>View Your Home Page</h3>
+	<p>A Brief Description</p>
+	<a href='#' class='button-primary'>View Now</a>
+	</div>
+	<div class='btn-two'>
 	<h3>Add/Edit A Subpage</h3>
-	<a href='#' class='button'>View Now</a>
+	<p>A Brief Description</p>
+	<a href='#' class='button-primary'>View Now</a>
+	</div>
+	<div class='btn-three'>
 	<h3>Write A Blog Post</h3>
-	<a href='#' class='button'>View Now</a>
+	<p>A Brief Description</p>
+	<a href='#' class='button-primary'>View Now</a>
+	</div>
+	</div>
 	";
 }
 function add_custom_homepage_widget() {
