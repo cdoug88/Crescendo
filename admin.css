@@ -1,6 +1,6 @@
 input[type=radio], input[type=checkbox] {
-	min-height: 16px;
-	min-width: 16px;
+	min-height: 16px!important;
+	min-width: 16px!important;
 }
 input {
 	min-height: 40px;
