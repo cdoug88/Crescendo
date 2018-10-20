@@ -1,14 +1,8 @@
-<html <?php language_attributes(); ?>>
-	<head>
-		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-		<?php wp_head(); ?>
-	</head>  
+
+	<?php get_header(); ?>
   <body <?php body_class(); ?>>
     <div id="mainContainer" class="main-container">
       <div class="site-header wide">
-	       	<?php get_header(); ?>
         <div class="hero wide" style="background-image: url('');">
 	        
         </div>
