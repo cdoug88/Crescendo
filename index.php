@@ -7,4 +7,3 @@
 <?php get_template_part( 'nav', 'below' ); ?>
 </section>
 <?php get_sidebar(); ?>
-<!-- <?php get_footer(); ?> -->

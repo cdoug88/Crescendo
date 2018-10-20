@@ -1,4 +1,12 @@
 <?php
+
+function front_page_style_sheet() {
+if (is_front_page() ) {
+wp_enqueue_style( 'front-page-styling', get_stylesheet_directory_uri() . '/home.css' );
+}}
+add_action('wp_enqueue_scripts', 'front_page_style_sheet');
+
+
 /*
 // 1. customize ACF path 
 add_filter(‘acf/settings/path’, ‘my_acf_settings_path’); 
