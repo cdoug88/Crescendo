@@ -177,12 +177,14 @@ body {
   min-height: 100%;
   padding: 0;
   margin: 0;
-  background: #353535;
+  background: white;
   -ms-font-feature-settings: 'liga' 1, 'kern';
    -o-font-feature-settings: 'liga' 1, 'kern'; /* FF old */
       font-feature-settings: 'liga' 1, 'kern';
 }
-
+#content {
+	min-height: 400px;
+}
 .main-container {
   position: relative;
   width: 100%;
