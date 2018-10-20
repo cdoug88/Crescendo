@@ -1,53 +1,24 @@
 <?php /* Template Name: PageWithoutSidebar */ ?>
 
-	<?php get_header(); ?>
-  <body <?php body_class(); ?>>
-    <div id="mainContainer" class="main-container">
-      <div class="site-header wide">
-        <div class="hero wide" style="background-image: url('');">
-	        
-        </div>
-
-      </div>
-		<section id="content" role="main">
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'entry' ); ?>
-			<?php endwhile; endif; ?>
-			
-		</section>
-		
-		
-      <!--- ADD HOME PAGE SECTIONS HERE --->
-	  <?php get_footer(); ?>
-    </div>
-    <script>
-		var navigation = (function() {
-		  var el = $("navigation");
-		  var button = $("menu");
-		  var navOpen = false;
-		  var ulHeight = function() {return el.down("ul").getHeight();};
-		  var open = function() {
-		    el.setStyle({height: ulHeight() + "px"}); 
-		    el.addClassName("active"); 
-		    button.addClassName("active");
-		    navOpen = true;
-		  };
-		  var close = function() {
-		    el.setStyle({height: 0 + "px"}); 
-		    el.removeClassName("active"); 
-		    button.removeClassName("active");
-		    navOpen = false;
-		  };
-		  var events = (function() {
-		    button.on("click", function(event,element){
-		      navOpen == false ? open() : close();
-		    });
-		  }());
-		  return {
-		    open: open,
-		    close: close
-		  }
-		}());
-    </script>
-  </body>
-</html>
+<?php get_header(); ?>
+<div class="hero wide" style="background: url('<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>');">
+<section id="content" role="main">
+	
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<header class="header">
+				<h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+			</header>
+			<section class="entry-content">
+				
+				<?php the_content(); ?>
+				<div class="entry-links">
+					<?php wp_link_pages(); ?>
+				</div>
+			</section>
+		</article>
+<!-- 	<?php if ( ! post_password_required() ) comments_template( '', true ); ?> -->
+	<?php endwhile; endif; ?>
+	
+</section>
+<?php get_footer(); ?>
