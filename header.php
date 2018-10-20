@@ -27,6 +27,12 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 		</nav>
 	  </div>
+	  <div class="hero wide" style="background: url('<?php 
+if ( has_post_thumbnail() ) { 
+	the_post_thumbnail_url();
+} 
+?>');')">
+	  </div>
 	</header>	
 		
 				
