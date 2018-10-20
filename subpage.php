@@ -1,7 +1,7 @@
 <?php /* Template Name: PageWithoutSidebar */ ?>
 
 <?php get_header(); ?>
-<div class="hero wide" style="background: url('<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>');">
+<div class="hero wide" style="background: url(<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>);">
 <section id="content" role="main">
 	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
