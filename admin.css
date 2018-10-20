@@ -105,6 +105,10 @@ a:hover, a:active, a:visited {
 }
 .postbox {
 	border: none!important;	
+	background: transparent;
+}
+.js .postbox .hndle, .js .widget .widget-top, button.handlediv {
+	display: none;
 }
 li#toplevel_page_crec-logo {
     background-image: url('https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg')!important;
