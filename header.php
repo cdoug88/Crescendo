@@ -19,7 +19,7 @@
 	        <span class="menu-bar"></span>
 	      </span>
 	    </button>
-	    <nav id="menu" role="navigation">
+	    <nav id="menu navigation" role="navigation" class="navigation">
 	<!--
 						<div id="search">
 							<?php get_search_form(); ?>
