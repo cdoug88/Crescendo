@@ -216,7 +216,7 @@ function custom_homepage_widget() {
 	<span class='dashicons dashicons-admin-home'></span>
 	<h3>View Your Home Page</h3>
 	<p>Click here to view your home page and see any changes that you have made.</p>
-	<a href='<?php echo esc_url( home_url( "/" ) ); ?>' class='button-primary'>View Now</a>
+	<a href='<?php echo esc_url( home_url() ); ?>' class='button-primary'>View Now</a>
 	</div>
 	<div class='btn-two'>
 	<span class='dashicons dashicons-admin-page'></span>
