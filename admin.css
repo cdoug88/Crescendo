@@ -88,6 +88,9 @@ a:hover, a:active, a:visited {
     padding-bottom: 20px;
     text-align: center;
 }
+.accordion-section-title:after, .handlediv, .item-edit, .postbox .handlediv.button-link, .toggle-indicator {
+	display: none;
+}
 .dash-btns {
 	display:flex;
 	justify-content: center;
