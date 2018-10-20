@@ -88,9 +88,6 @@ a:hover, a:active, a:visited {
     padding-bottom: 20px;
     text-align: center;
 }
-.accordion-section-title:after, .handlediv, .item-edit, .postbox .handlediv.button-link, .toggle-indicator {
-	display: none;
-}
 .dash-btns {
 	display:flex;
 	justify-content: center;
@@ -108,10 +105,6 @@ a:hover, a:active, a:visited {
 }
 .postbox {
 	border: none!important;	
-	background: transparent;
-}
-.js .postbox .hndle, .js .widget .widget-top, button.handlediv {
-	display: none;
 }
 li#toplevel_page_crec-logo {
     background-image: url('https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg')!important;
