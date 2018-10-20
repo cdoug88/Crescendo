@@ -1,4 +1,4 @@
-<?php /* Template Name: Subpage */ ?>
+<?php /* Template Name: PageWithoutSidebar */ ?>
 
 	<?php get_header(); ?>
   <body <?php body_class(); ?>>
@@ -9,8 +9,13 @@
         </div>
 
       </div>
-
-		<?php the_content(); ?>
+		<section id="content" role="main">
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'entry' ); ?>
+			<?php endwhile; endif; ?>
+			
+		</section>
+		
 		
       <!--- ADD HOME PAGE SECTIONS HERE --->
 	  <?php get_footer(); ?>
