@@ -35,7 +35,7 @@ if ( has_post_thumbnail() ) {
 
 	</header>
 	<div class="tagline">
-		<h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+		<h1 class="entry-title"><?php the_field('tagline'); ?><!-- <?php the_title(); ?> --></h1>
 	</div>
 	  </div>	
 		
