@@ -185,6 +185,21 @@ body {
 #content {
 	min-height: 400px;
 }
+#copyright {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#footer {
+	width: 100%;
+	background: #2c2c2c;
+	height: auto;
+	padding: 20px 10px;
+	min-height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .site-header {
 	height: 35vh;
 }
