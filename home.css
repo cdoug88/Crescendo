@@ -22,7 +22,7 @@ html {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+} 
 .post-edit-link {
 	display: none;
 }
