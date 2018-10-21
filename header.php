@@ -34,7 +34,9 @@ if ( has_post_thumbnail() ) {
 	  </div>
 
 	</header>
-
+	<div class="tagline">
+		<h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+	</div>
 	  </div>	
 		
 				
