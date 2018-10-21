@@ -185,6 +185,9 @@ body {
 #content {
 	min-height: 400px;
 }
+.site-header {
+	height: 35vh;
+}
 .main-container {
   position: relative;
   width: 100%;
