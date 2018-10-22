@@ -3,6 +3,11 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+		<link rel="stylesheet" type="text/css" href="/includes/css/animate.css" />
+		<script src="/includes/js/wow.js"></script>
+		<script>
+			var wow = new WOW().init();
+		</script>
 		<?php wp_head(); ?>
 	</head> 
 			  <div class="hero wide site-header" style="background: url('<?php 
