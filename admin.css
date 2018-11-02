@@ -6,6 +6,7 @@ input {
 	min-height: 40px;
 	
 }
+/*
 #wpbody-content .metabox-holder {
     padding-top: 10px;
     justify-content: center;
@@ -13,6 +14,7 @@ input {
     align-items: center;
     flex-direction: column;
 }
+*/
 #wp-content-media-buttons a.button.wpforms-insert-form-button {
     display: none;
 }
@@ -64,13 +66,17 @@ a:hover, a:active, a:visited {
 , .wrap .page-title-action:hover {
 	background: #0d8acd;
 }
+/*
 #wpbody-content #dashboard-widgets #postbox-container-1 {
     width: 100%!important;
 }
+*/
+/*
 #wpbody-content #dashboard-widgets #postbox-container-2 {
 	width: 70%;
 	float: none;
 }
+*/
 #dashboard-widgets .inside h3, #dashboard-widgets .inside h4 {
 	font-weight: 600;
 }
@@ -310,4 +316,76 @@ a[href*="widgets.php"]{ display: none
 }
 li#wp-admin-bar-customize, li#wp-admin-bar-widgets {
     display: none;
+}
+@media only screen and (max-width: 960px) {
+	#adminmenu div.wp-menu-name {
+		display: none;
+	}
+	#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu {
+    background: #031221;
+    color: #fff;
+    padding: 4px;
+    width: 34px;
+}
+li#toplevel_page_crec-logo {
+    background-image: url(https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg)!important;
+    background-repeat: no-repeat!important;
+    left: 2px!important;
+    top: -7px!important;
+}
+#adminmenu .wp-submenu-head, #adminmenu a.menu-top {
+    font-size: 10px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 18px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    transition: all .5s;
+}
+.auto-fold #adminmenu, .auto-fold #adminmenu li.menu-top, .auto-fold #adminmenuback, .auto-fold #adminmenuwrap {
+    width: 45px;
+}
+li#toplevel_page_crec-logo {
+    background-image: url(https://citylinecreative.com/wp-content/themes/Crescendo/images/crec.svg)!important;
+    background-repeat: no-repeat!important;
+    left: 3px!important;
+    top: -7px!important;
+    max-width: 36px;
+}
+.auto-fold #adminmenuback, .auto-fold #adminmenuwrap {
+    display: block;
+}
+.auto-fold #wpcontent {
+    position: relative;
+    margin-left: 41px;
+    padding-left: 10px;
+}
+li#wp-admin-bar-wp-logo, li#wp-admin-bar-customize, li#wp-admin-bar-comments, li#wp-admin-bar-my-account {
+	display: none!important;
+}
+.auto-fold #adminmenu li a {
+    font-size: 16px;
+    padding: 0px;
+}
+.dash-btns {
+    flex-direction: column;
+}
+}
+@media only screen and (max-width: 782px) {
+	html.wp-toolbar {
+    padding-top: 32px;
+}
+
+	}
+@media screen and (max-width: 600px)
+.auto-fold #adminmenu {
+    top: 10px!important;
+}
+#wpbody {
+    padding-top: 6px!important;
+}
 }
