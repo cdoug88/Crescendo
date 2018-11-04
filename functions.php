@@ -216,19 +216,19 @@ function custom_homepage_widget() {
 	<span class='dashicons dashicons-admin-home'></span>
 	<h3>View Your Home Page</h3>
 	<p>Click here to view your home page and see any changes that you have made.</p>
-	<a href='<?php echo esc_url( home_url() ); ?>' class='button-primary'>View Now</a>
+	<a href='https://csprecords.com' class='button-primary'>View Now</a>
 	</div>
 	<div class='btn-two'>
 	<span class='dashicons dashicons-admin-page'></span>
-	<h3>Add/Edit A Subpage</h3>
+	<h3>Add/Edit Your Pages</h3>
 	<p>Click here to go the the page editor where you can add, change, or remove pages.</p>
-	<a href='/edit.php' class='button-primary'>View Now</a>
+	<a href='/wp-admin/edit.php?post_type=page' class='button-primary'>View Now</a>
 	</div>
 	<div class='btn-three'>
 	<span class='dashicons dashicons-welcome-write-blog'></span>
-	<h3>Write A Blog Post</h3>
-	<p>Click here to go to your blog manager where you can add, change, or remove posts.</p>
-	<a href='#' class='button-primary'>View Now</a>
+	<h3>Add/Edit News & Events</h3>
+	<p>Click here to go to your post manager where you can add, change, or remove news posts.</p>
+	<a href='/wp-admin/edit.php' class='button-primary'>View Now</a>
 	</div>
 	</div>
 	";
@@ -368,7 +368,7 @@ add_action( 'admin_menu', 'linked_url' );
     add_action( 'admin_menu' , 'linkedurl_function' );
     function linkedurl_function() {
     global $menu;
-    $menu[0][2] = "https://citylinecreative.com";
+    $menu[0][2] = home_url();
     }
 
 
