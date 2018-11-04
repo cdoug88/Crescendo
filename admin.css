@@ -317,6 +317,10 @@ a[href*="widgets.php"]{ display: none
 li#wp-admin-bar-customize, li#wp-admin-bar-widgets {
     display: none;
 }
+#adminmenu .wp-menu-image img {
+	display: none!important;
+	}
+
 @media only screen and (max-width: 960px) {
 	#adminmenu div.wp-menu-name {
 		display: none;
