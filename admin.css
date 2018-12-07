@@ -1,3 +1,6 @@
+#update-nag, .update-nag {
+	display: none;
+}
 input[type=radio], input[type=checkbox] {
 	min-height: 16px!important;
 	min-width: 16px!important;
