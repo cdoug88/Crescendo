@@ -1,57 +1,39 @@
 <?php
+	add_filter('wp_mail_from', 'itsg_mail_from_address');
+function itsg_mail_from_address($email){
+return 'support@citylinecreative.com';
+ }
+add_filter('wp_mail_from_name', 'itsg_mail_from_name');
+function itsg_mail_from_name($from_name){
+return "CityLine Creative";
+ }
+	
 
+
+add_action('set_current_user', 'cc_hide_admin_bar');
+function cc_hide_admin_bar() {
+  if (current_user_can('edit_posts')) {
+    show_admin_bar(false);
+  }
+}
+
+
+//remove wordpress update reminder notifications
+function remove_core_updates(){
+global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+}
+add_filter('pre_site_transient_update_core','remove_core_updates');
+add_filter('pre_site_transient_update_plugins','remove_core_updates');
+add_filter('pre_site_transient_update_themes','remove_core_updates');
+
+
+//add additional stylesheet to the home page
 function front_page_style_sheet() {
 if (is_front_page() ) {
 wp_enqueue_style( 'front-page-styling', get_stylesheet_directory_uri() . '/home.css' );
 }}
 add_action('wp_enqueue_scripts', 'front_page_style_sheet');
 
-
-/*
-// 1. customize ACF path 
-add_filter(‘acf/settings/path’, ‘my_acf_settings_path’); 
-function my_acf_settings_path( $path ) { 
-	// update path
-	$path = get_stylesheet_directory() . ‘/inc/plugins/acf/’; 
-	// return
-	return $path; 
-}
-
- // 2. customize ACF dir 
- add_filter(‘acf/settings/dir’, ‘my_acf_settings_dir’); 
-function my_acf_settings_dir( $dir ) { 
- 	// update path
- 	$dir = get_stylesheet_directory_uri() . ‘/inc/plugins/acf/’; 
- 	// return
- 	return $dir; 
- }
-
- // 3. Include ACF 
- include_once( get_stylesheet_directory() . ‘/inc/plugins/acf/acf.php’ );
-
-
-
- // 1. customize wpp path 
- add_filter(‘wpp/settings/path’, ‘my_wpp_settings_path’); 
-function my_wpp_settings_path( $path ) { 
- 	// update path
- 	$path = get_stylesheet_directory() . ‘/inc/plugins/wpp/’; 
-	// return
-	return $path; 
- }
-
- // 2. customize wpp dir 
- add_filter(‘wpp/settings/dir’, ‘my_wpp_settings_dir’); 
-function my_wpp_settings_dir( $dir ) { 
-	// update path
-	$dir = get_stylesheet_directory_uri() . ‘/inc/plugins/wpp/’; 
- 	// return
-	return $dir; 
-}
-
-// 3. Include wpp 
-include_once( get_stylesheet_directory() . ‘/inc/plugins/wpp/wppusher.php’ );
-*/
 
 
 add_action('admin_menu', 'nwcm_admin_init');
@@ -245,6 +227,7 @@ add_action('wp_dashboard_setup', 'add_custom_homepage_widget');
 
 
 
+
 // get current login user's role and then remove menu items from admin
 function remove_menus(){
 
@@ -362,7 +345,7 @@ return $count;
 
 add_action( 'admin_menu', 'linked_url' );
     function linked_url() {
-    add_menu_page( 'linked_url', '', 'read', 'crec-logo', '', 'crec-logo', 0 );
+    add_menu_page( 'linked_url', '', 'read', 'crec-logo', '', '', 0 );
     }
 
     add_action( 'admin_menu' , 'linkedurl_function' );
@@ -372,17 +355,17 @@ add_action( 'admin_menu', 'linked_url' );
     }
 
 
-if ( !current_user_can( 'manage_options' ) && is_admin() )
+if ( current_user_can( 'editor' ) && is_admin() )
 {
     function wpse271937_hide_adminbar()
     {
         ?>
         <style>
             #wpadminbar {
-                display: none;
+                display: none!important;
             }
             #wpwrap {
-                top: -30px;/** change to own preference */
+                top: -30px!important;/** change to own preference */
             } 
         </style>
         <?php
