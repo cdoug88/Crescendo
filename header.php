@@ -5,6 +5,10 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 		<link rel="stylesheet" type="text/css" href="/includes/css/animate.css" />
 		<script src="/includes/js/wow.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 		<script>
 			var wow = new WOW().init();
 		</script>
@@ -16,10 +20,21 @@ if ( has_post_thumbnail() ) {
 } 
 ?>');background-position: center center;width: 100%; background-size: cover;">
 	<header id="primary" class="primary wide">
+		<?php
+				if ( is_user_logged_in() ) {
+				echo '
+		<div class="admin-tool">
+			<a class="logout" href="' . get_home_url() . '/dashboard"><i class="fas fa-home"></i></a>
+			<a class="edit-post" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>
+			</div>
+			';
+				} 
+			?>
+		
 	  <div class="container">
 	    <div id="logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
-				<img src="/images/layouts/logo.png">
+				<img src="/wp-content/themes/Crescendo/images/full-logo.svg" style="max-width: 290px;">
 			</a>
 	      </a>
 	    </div>
@@ -37,12 +52,11 @@ if ( has_post_thumbnail() ) {
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 		</nav>
 	  </div>
-
+<div class="thin-line">
+	  </div>
 	</header>
-	<div class="tagline">
-		<h1 class="entry-title"><?php the_field('tagline'); ?><!-- <?php the_title(); ?> --></h1>
-	</div>
-	  </div>	
+	
+	
 		
 				
 
