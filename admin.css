@@ -1,6 +1,54 @@
+#login form p {
+
+    color: white!important;
+}
+a.wp-first-item.wp-not-current-submenu.menu-top.menu-icon-generic.toplevel_page_crec-logo.menu-top-first {
+    height: 60px;
+   
+}
+.wp-menu-image.dashicons-before.dashicons-admin-generic {
+	display: none!important;
+}
+
+#adminmenu li.menu-top {
+    border: none;
+    min-height: 54px;
+    position: relative;
+}
+h2.hndle.ui-sortable-handle {
+    background: #05192d;
+    color: white;
+}
+.admin-tool {
+    display: flex;
+    flex-direction: column;
+    top: 5px;
+    left: 5px;
+    position: fixed;
+    z-index: 90000;
+}
+.admin-tool a {
+	 background: #05192d; 
+	 color: white;
+    padding: 12px;
+    border-radius: 50%;
+    margin-bottom: 6px;
+    transition: all .7s;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+	}
+	.admin-tool a:hover {
+		color: white;
+		background: #0d8acd;
+		}
+		.admin-tool a:visited {
+			color: white;
+			}
+			.admin-tool a:visited:hover {
+				color: white;
+				}
 #update-nag, .update-nag {
 	display: none;
-}
+	}
 input[type=radio], input[type=checkbox] {
 	min-height: 16px!important;
 	min-width: 16px!important;
@@ -173,7 +221,7 @@ li#wp-admin-bar-wp-logo {
     box-shadow: none;
     background-color: #031221;
 }
-#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu {
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu{
     background: #031221;
     color: #fff;
 	padding: 4px;
@@ -320,10 +368,6 @@ a[href*="widgets.php"]{ display: none
 li#wp-admin-bar-customize, li#wp-admin-bar-widgets {
     display: none;
 }
-#adminmenu .wp-menu-image img {
-	display: none!important;
-	}
-
 @media only screen and (max-width: 960px) {
 	#adminmenu div.wp-menu-name {
 		display: none;
@@ -396,3 +440,6 @@ li#wp-admin-bar-wp-logo, li#wp-admin-bar-customize, li#wp-admin-bar-comments, li
     padding-top: 6px!important;
 }
 }
+html {
+	margin-top: 0!important;
+	}
