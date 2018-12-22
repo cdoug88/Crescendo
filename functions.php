@@ -1,6 +1,6 @@
 <?php
-//include plugins with theme
-
+//include plugins to install	
+	
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
@@ -59,19 +59,8 @@ function my_theme_register_required_plugins() {
 }
 
 
-// 1. customize ACF path 
-add_filter(‘acf/settings/path’, ‘my_acf_settings_path’); function my_acf_settings_path( $path ) { 
-// update path 
-$path = get_stylesheet_directory() . ‘/inc/plugins/acf/’; // return return $path; }	
-	
-//allow svg uploads
-function cc_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter('upload_mimes', 'cc_mime_types');	
+//send emails from cityline instead of wordpress email
 
-//change password reset email
 	add_filter('wp_mail_from', 'itsg_mail_from_address');
 function itsg_mail_from_address($email){
 return 'support@citylinecreative.com';
@@ -82,7 +71,8 @@ return "CityLine Creative";
  }
 	
 
-//hide admin bar
+//hide admin bar for editors
+
 add_action('set_current_user', 'cc_hide_admin_bar');
 function cc_hide_admin_bar() {
   if (current_user_can('edit_posts')) {
@@ -108,7 +98,7 @@ wp_enqueue_style( 'front-page-styling', get_stylesheet_directory_uri() . '/home.
 add_action('wp_enqueue_scripts', 'front_page_style_sheet');
 
 
-//allowed menu items in admin area
+
 add_action('admin_menu', 'nwcm_admin_init');
 function nwcm_admin_init()
 {
@@ -130,8 +120,6 @@ function nwcm_admin_init()
             remove_menu_page($value[2]);
     }
 } 
-
-//logo in admin area links to homepage
 function my_login_logo_url() {
     return home_url();
 }
@@ -143,7 +131,7 @@ function my_login_logo_url_title() {
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
-//adds logo to login screen
+
 function custom_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
@@ -153,7 +141,6 @@ function custom_login_logo() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'custom_login_logo' );
 
-//adds logo to login screen
 function custom_admin_logo() { ?>
     <style type="text/css">
        li#toplevel_page_crec-logo {
@@ -163,7 +150,6 @@ function custom_admin_logo() { ?>
 <?php }
 add_action( 'admin_enqueue_scripts', 'custom_login_logo' );
 
-//removes the widget menu from admin
 function remove_widgets_submenu() {
       global $submenu;
  
@@ -180,7 +166,6 @@ function remove_widgets_submenu() {
     }
     add_action('admin_head', 'remove_widgets_submenu');  
  
-//if clicked on widgets it redirects to home page
     function widgets_redirect() {
       $result = stripos($_SERVER['REQUEST_URI'], 'widgets.php');
       if ($result!==false) {
@@ -190,8 +175,6 @@ function remove_widgets_submenu() {
  
     add_action('admin_menu', 'widgets_redirect');
 
-
-//logout without confirmation
 add_action('check_admin_referer', 'logout_without_confirm', 10, 2);
 function logout_without_confirm($action, $result)
 {
@@ -205,8 +188,7 @@ function logout_without_confirm($action, $result)
         die;
     }
 }
-
-// added logout link and icon to admin
+// Do this only once. Can go anywhere inside your functions.php file
 $role_object = get_role( 'editor' );
 $role_object->add_cap( 'edit_theme_options' );
 
@@ -214,7 +196,7 @@ add_action('admin_menu', 'logout_menu_item');
 function logout_menu_item() {
     add_menu_page('', 'Logout', 'editor', 'logout', '__return_false', 'dashicons-external', 999); 
 }
-//after logout redirects to home page
+
 add_action('after_setup_theme', 'redirect_loggingout');
     function redirect_loggingout() {
     if ( isset($_GET['page']) && $_GET['page'] == 'logout' ) {
@@ -223,20 +205,20 @@ add_action('after_setup_theme', 'redirect_loggingout');
     }
 }
 
-//added edit navigation link and icon to admin 
+
 add_action( 'admin_menu', 'my_navigation_menu' );
 function my_navigation_menu() {
 	add_menu_page( 'Main Navigation', 'Edit Navigation', 'edit_posts', '/nav-menus.php', '', 'dashicons-admin-links', 40  );
 }
 
-//added stylesheet for login screen
+
 function custom_login_stylesheet() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/login.css' );
 }
 add_action( 'login_enqueue_scripts', 'custom_login_stylesheet' );
 
 
-//removed dashboard widgets to make simple
+
 add_action( 'wp_dashboard_setup', 'pmg_rm_meta_boxes' );
 function pmg_rm_meta_boxes()
 {
@@ -254,7 +236,24 @@ function pmg_rm_meta_boxes()
 }
 
 
-// custom dashboard widget for shortcuts
+
+/*
+// example custom dashboard widget
+function custom_support_widget() {
+	echo "<p>With Crecendo, you can expect a cleaner, easier, and more enjoyable user experience. We do everything we can to periodically add new features and tools to give you more control over your website while maintaining the simplicity you have come to know and love. <br><br>If you are have found a problem with your website, need help updating your website, or just have questions regarding your website, <strong>fill out the form below so someone from our team will get in touch with you ASAP.</strong></p>";
+}
+function add_custom_support_widget() {
+	wp_add_dashboard_widget('custom_support_widget', 'Website Support', 'custom_support_widget');
+}
+add_action('wp_dashboard_setup', 'add_custom_support_widget');
+*/
+
+
+
+
+
+
+// example custom dashboard widget
 function custom_homepage_widget() {
 	echo "
 	<div class='dash-btns'>
@@ -279,12 +278,18 @@ function custom_homepage_widget() {
 	</div>
 	";
 }
-
-// add widget to home page for support
 function add_custom_homepage_widget() {
 	wp_add_dashboard_widget('custom_homepage_widget', 'Dashboard Shortcuts', 'custom_homepage_widget');
 }
 add_action('wp_dashboard_setup', 'add_custom_homepage_widget');
+
+
+
+
+
+
+
+
 
 // get current login user's role and then remove menu items from admin
 function remove_menus(){
@@ -325,13 +330,12 @@ function admin_stylesheet()
 
 add_action('wp_enqueue_scripts', 'admin_stylesheet');
 
-//added admin css file
 function admin_style() {
   wp_enqueue_style('admin-styles', get_stylesheet_directory_uri().'/admin.css');
 }
 add_action('admin_enqueue_scripts', 'admin_style');
 
-//basic functionality
+
 add_action( 'after_setup_theme', 'blankslate_setup' );
 function blankslate_setup()
 {
@@ -401,7 +405,7 @@ return $count;
 
 
 
-//link logo to home page
+
 add_action( 'admin_menu', 'linked_url' );
     function linked_url() {
     add_menu_page( 'linked_url', '', 'read', 'crec-logo', '', '', 0 );
@@ -413,7 +417,7 @@ add_action( 'admin_menu', 'linked_url' );
     $menu[0][2] = home_url();
     }
 
-//hide admin bar if user is logged in
+
 if ( current_user_can( 'editor' ) && is_admin() )
 {
     function wpse271937_hide_adminbar()
