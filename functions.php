@@ -1,4 +1,69 @@
 <?php
+//include plugins with theme
+
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+
+function my_theme_register_required_plugins() {
+	$plugins = array(
+// This is an example of how to include a plugin from a GitHub repository in your theme.
+		// This presumes that the plugin code is based in the root of the GitHub repository
+		// and not in a subdirectory ('/src') of the repository.
+		array(
+			'name'               => 'ACF Pro', // The plugin name.
+			'slug'               => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
+			'source'             => get_stylesheet_directory() . '/inc/advanced-custom-fields-pro.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
+		array(
+			'name'               => 'ACF Theme Code', // The plugin name.
+			'slug'               => 'acf-theme-code', // The plugin slug (typically the folder name).
+			'source'             => get_stylesheet_directory() . '/inc/acf-theme-code.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
+		array(
+			'name'               => 'Grid Builder', // The plugin name.
+			'slug'               => 'bs3-grid-builder', // The plugin slug (typically the folder name).
+			'source'             => get_stylesheet_directory() . '/inc/bs3-grid-builder.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
+		array(
+			'name'               => 'Classic Editor', // The plugin name.
+			'slug'               => 'classic-editor', // The plugin slug (typically the folder name).
+			'source'             => get_stylesheet_directory() . '/inc/classic-editor.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		)
+);
+	tgmpa( $plugins, $config );
+}
+
+
+// 1. customize ACF path 
+add_filter(‘acf/settings/path’, ‘my_acf_settings_path’); function my_acf_settings_path( $path ) { 
+// update path 
+$path = get_stylesheet_directory() . ‘/inc/plugins/acf/’; // return return $path; }	
+	
 //allow svg uploads
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
