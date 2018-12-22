@@ -1,0 +1,60 @@
+/**
+ * Switcher between wp-editor and BS3 Grid Builder
+ *
+ * @author      Mahdi Yazdani
+ * @package     BS3 Grid Builder
+ * @since       1.0.5
+ */
+#bs3-grid-builder-wrapper {
+    display: none !important;
+}
+#bs3-grid-builder-btn {
+    position: relative;
+    text-align: center;
+    font-weight: 400;
+    box-shadow: none !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
+#bs3-grid-builder-btn span {
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 15%;
+    padding: 1px 5px;
+    margin-right: 10px;
+}
+#wp-editor-btn {
+    position: relative;
+    text-align: center;
+    font-weight: 400;
+    box-shadow: none !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
+#wp-editor-btn span {
+    margin-top: 3px;
+    margin-right: 10px;
+}
+#wp-editor-btn.nav-tab-active,
+#bs3-grid-builder-btn.nav-tab-active {
+    border-bottom: 1px solid #f1f1f1;
+    background: #f1f1f1;
+    background-image: none;
+    color: #000;
+}
+#bs3-grid-builder-btn.nav-tab-active span {
+    border-color: #000;
+    color: #000;
+}
+.bs3_grid_builder_active #postdivrich {
+    position: absolute !important;
+    top: -999999999999999px !important;
+}
+.bs3_grid_builder_active #bs3-grid-builder-wrapper {
+    display: block !important;
+}
+.bs3_grid_builder_active #post-preview {
+    display: none !important;
+}
+.wp-toolbar .wp-editor-tools,
+.wp-toolbar .mce-toolbar-grp.mce-container.mce-panel.mce-stack-layout-item {
+    width: 100% !important;
+}
