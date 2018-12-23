@@ -1,3 +1,7 @@
+.login #login_error, .login .message, .login .success {
+	position: relative;
+	top: 20px;
+}
 body {
 	background: #05192d;
 	position: relative;	
