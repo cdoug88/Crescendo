@@ -1,3 +1,10 @@
+
+span.collapse-button-label, .collapse-button-icon {
+    display: none!important;
+}
+#adminmenu li>a.menu-top:focus {
+	background: transparent;
+	}
 #login form p {
 
     color: white!important;
