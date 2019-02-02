@@ -1,6 +1,8 @@
 
 <?php get_header(); ?>
-
+<div class="tagline">
+</div>
+</div>
 <section id="content" role="main">
 	
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
